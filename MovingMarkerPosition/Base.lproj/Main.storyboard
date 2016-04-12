@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="13F1066" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -12,13 +13,36 @@
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC" customClass="GMSMapView">
+                    <view key="view" contentMode="scaleToFill" id="fR2-nW-ha3">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1Gc-LB-p3E" customClass="GMSMapView">
+                                <rect key="frame" x="180" y="236" width="240" height="128"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GHQ-bx-7nq">
+                                <rect key="frame" x="277" y="560" width="46" height="30"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <state key="normal" title="Search"/>
+                                <connections>
+                                    <action selector="animateButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="q0f-k8-XaZ"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="GHQ-bx-7nq" secondAttribute="bottom" id="4oi-MN-zFy"/>
+                            <constraint firstItem="GHQ-bx-7nq" firstAttribute="centerX" secondItem="fR2-nW-ha3" secondAttribute="centerX" id="9S5-3F-EK0"/>
+                            <constraint firstItem="1Gc-LB-p3E" firstAttribute="centerX" secondItem="fR2-nW-ha3" secondAttribute="centerX" id="Axh-af-ybw"/>
+                            <constraint firstItem="1Gc-LB-p3E" firstAttribute="height" secondItem="fR2-nW-ha3" secondAttribute="height" id="IKl-ft-7uI"/>
+                            <constraint firstItem="1Gc-LB-p3E" firstAttribute="width" secondItem="fR2-nW-ha3" secondAttribute="width" id="VK7-j9-YLm"/>
+                            <constraint firstItem="GHQ-bx-7nq" firstAttribute="width" secondItem="fR2-nW-ha3" secondAttribute="width" id="W4G-Ca-4lz"/>
+                            <constraint firstItem="1Gc-LB-p3E" firstAttribute="centerY" secondItem="fR2-nW-ha3" secondAttribute="centerY" id="gkI-u8-vH9"/>
+                        </constraints>
                     </view>
                     <connections>
-                        <outlet property="mapView" destination="8bC-Xf-vdC" id="hXG-ch-bTc"/>
+                        <outlet property="mapView" destination="1Gc-LB-p3E" id="9sg-Gv-qYg"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
